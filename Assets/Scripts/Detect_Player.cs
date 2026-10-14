@@ -33,11 +33,12 @@ public class Detect_Player : MonoBehaviour
         SPIKES = GetComponent<Rigidbody>();
     }
 
-    //private void Update()
-    //{
-    //    if (thingHit != null)
-    //    {
-    //        Debug.Log("I'm no longer hitting it.");
-    //    }
-    //}
+    void Update()
+    {
+        if (OnCollisionEnter)
+            if (thingHit != null)
+        {
+            Debug.Log("I'm no longer hitting it.");
+        }
+    }
 }

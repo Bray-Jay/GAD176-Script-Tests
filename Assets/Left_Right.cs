@@ -8,28 +8,28 @@ public class Left_Right : MonoBehaviour
     public GameObject BOX;
     public bool moving;
 
-    private Vector2 newPos1;
-    private Vector2 newPos2;
+    private Vector2 space1;
+    private Vector2 space2;
 
     void Start()
     {
-        newPos1 = new Vector2(-5, 0);
-        newPos2 = new Vector2(5, 0);
+        space1 = new Vector2(-5, 0);
+        space2 = new Vector2(5, 0);
     }
 
     void Update()
     {
-        if (BOX.transform.position.x > newPos1.x && moving == true)
+        if (BOX.transform.position.x > space1.x && moving == true)
         {
 
-            BOX.transform.position = Vector2.MoveTowards(BOX.transform.position, newPos1, 2 * Time.deltaTime);
+            BOX.transform.position = Vector2.MoveTowards(BOX.transform.position, space1, 2 * Time.deltaTime);
         }
         else
         {
             moving = false;
-            BOX.transform.position = Vector2.MoveTowards(BOX.transform.position, newPos2, 2 * Time.deltaTime);
+            BOX.transform.position = Vector2.MoveTowards(BOX.transform.position, space2, 2 * Time.deltaTime);
 
-            if (newPos2.x <= BOX.transform.position.x)
+            if (space2.x <= BOX.transform.position.x)
             {
                 moving = true;
             }
